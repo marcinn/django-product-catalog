@@ -92,7 +92,7 @@ class ProductPhotosInline(admin.StackedInline):
     exclude = ('display_order',)
 
 
-class ProductAdmin(TabbedModelAdmin, admin.ModelAdmin):
+class ProductAdmin(TabbedModelAdmin):
     class Media:
         css = {
                 'all': (settings.ADMIN_MEDIA_PREFIX+'/weboffer/product.css',),
