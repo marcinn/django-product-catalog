@@ -65,6 +65,8 @@ class Product(models.Model):
     custom4     = models.CharField(max_length=255, null=True, blank=True)
     groups      = models.ManyToManyField(Group, null=True, blank=True)
     attributes  = models.ManyToManyField(Attribute, through='ProductAttribute')
+    created_at  = models.DateTimeField(auto_now_add=True)
+    updated_at  = models.DateTimeField(auto_now_add=True, auto_now=True)
     
     objects = ProductManager()
     public_objects = PublishedProductsManager()
