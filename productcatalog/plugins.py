@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 '''
 Created on 2009-07-04
 
@@ -7,13 +6,12 @@ Created on 2009-07-04
 
 from django import template 
 from django.core.urlresolvers import reverse
-from netwizard.django.search import IGlobalSearch
 from productcatalog import models 
 from django.db.models import Q
 
 
-class ProductSearch(IGlobalSearch, object):
-    title = u"Wyniki wyszukiwania produktów"
+class ProductSearch(object):
+    title = 'Product search results'
     def keyword_search(self, keyword):
         query = Q(long_desc__icontains=keyword) | \
             Q(short_desc__icontains=keyword) | \
